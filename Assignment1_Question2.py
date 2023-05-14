@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.patches as patches
 from matplotlib.patches import Ellipse
 
 # initializing given information
@@ -45,6 +44,7 @@ ax.grid(True)
 # from the table we can get a value for s
 # I have chosen 95% certainty for data
 # table: https://people.richland.edu/james/lecture/m170/tbl-chi.html
+
 s=np.sqrt(5.991)
 width = 2 * np.sqrt(eigenvalues[0])*s
 height = 2 * np.sqrt(eigenvalues[1])*s
@@ -55,4 +55,3 @@ ellipse = Ellipse((p*np.cos(theta), p*np.sin(theta)), width, height, color='red'
 ax.add_patch(ellipse)
 
 plt.show()
-print(sigma_y)
