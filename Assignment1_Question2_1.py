@@ -49,5 +49,5 @@ for cov_tt in values:
     ax.add_patch(ellipse)
 
     plt.show()
-    print("Jacobian for %.2f" %cov_tt)
+    print("Covariance for %.2f" %cov_tt)
     print(sigma_y)
