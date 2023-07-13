@@ -548,15 +548,6 @@ int main()
                 J.block<Dim, Dim>(row, col) = S * J_e_b;
 
 
-                if(iteration==0){ // Navid: Printing added
-                    cout << "The Jacobian on very first iteration\n";
-                    cout << std :: setprecision(3) << J << endl;
-                    cout << "The residual on very first iteration\n";
-                    cout << std :: setprecision(3) << r << endl;
-                }
-
-
-
                 // advance rows
                 row += Dim;
             }
@@ -596,6 +587,13 @@ int main()
 
         // conditional exit
         if (dX.norm() < 1e-6) break;
+    
+        if(iteration==0){ // Navid: Printing added
+            cout << "The Jacobian on very first iteration\n";
+            cout << std :: setprecision(3) << J << endl;
+            cout << "The residual on very first iteration\n";
+            cout << std :: setprecision(3) << r << endl;
+        }
     }
     cout << "-----------------------------------------------" << endl;
 
