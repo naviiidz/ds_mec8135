@@ -564,12 +564,7 @@ int main()
                 col = NUM_POSES * DoF + k * Dim;
                 J.block<Dim, Dim>(row, col) = S * J_e_b;
 
-                if(k==0){ // Navid: Printing added
-                    cout << "The Jacobian on very first iteration";
-                    cout << std :: setprecision(3) << J << endl;
-                    cout << "The residual on very first iteration";
-                    cout << std :: setprecision(3) << r << endl;
-                }
+
 
 
                 // advance rows
@@ -611,6 +606,14 @@ int main()
 
         // conditional exit
         if (dX.norm() < 1e-6) break;
+
+    if(iteration==0)
+        { // Navid: Printing added
+            cout << "The Jacobian on very first iteration";
+            cout << std :: setprecision(3) << J << endl;
+            cout << "The residual on very first iteration";
+            cout << std :: setprecision(3) << r << endl;
+        }
     }
     cout << "-----------------------------------------------" << endl;
 
