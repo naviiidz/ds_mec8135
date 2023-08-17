@@ -120,5 +120,7 @@ if __name__=="__main__":
     #plot_data(source, destination)
     inliers = search_inliers(source, destination, threshold)
     homography = homography(source, destination, inliers)
+    print("Normalized homography transformation matrix =:")
+    print(homography / homography[2, 2])
     plot_inliers(source, destination, inliers)
     #plot_outliers(source, destination, inliers)
